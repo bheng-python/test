@@ -30,8 +30,9 @@ while running:
         x = x - 1
     if keys[pygame.K_RIGHT]:
         x = x + 1
-    if player.colliderect(box_1):
-        y = box_1.top - player.height
+    for box in platforms:
+        if player.colliderect(box.top):
+            y = box.top - player.height
     clock.tick(60)
     pygame.display.flip()
 pygame.quit()
